@@ -109,6 +109,7 @@ export default function App() {
         <div className="date-bar">
           <button className="arrow" aria-label="Previous day" onClick={() => setDate(shift(date, -1))}><ChevronLeft size={18}/></button>
           <div className="date-label"><strong>{formatDate(date)}</strong>{date === today() && <span>Today</span>}</div>
+          {date !== today() && <button className="text-button" onClick={() => setDate(today())}>Today</button>}
           <button className="arrow" aria-label="Next day" onClick={() => setDate(shift(date, 1))}><ChevronRight size={18}/></button>
           <input aria-label="Choose date" type="date" value={date} onChange={e => setDate(e.target.value)}/>
         </div>
